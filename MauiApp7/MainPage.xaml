@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp7.MainPage">
+
+    
+        <Grid
+            Padding="5"
+            RowSpacing="5"
+            ColumnSpacing="5"
+            RowDefinitions="Auto, Auto, Auto, Auto, *">
+
+            <Entry
+                x:Name="newStudent"
+                Placeholder="Enter name"
+                Grid.Row="0">
+                
+            </Entry>
+            <Button
+                Text="Add Student"
+                Clicked="OnNewButtonClicked"
+                Grid.Row="1">
+        
+            </Button>
+
+            <Label
+                x:Name="statusMessage"
+                Grid.Row="2">
+                
+            </Label>
+
+            <Button
+                Text="Get Section List"
+                Clicked="OnGetButtonClicked"
+                Grid.Row="3">
+                
+            </Button>
+
+            <CollectionView x:Name="sectionList" Grid.Row="4">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ColumnDefinitions="*,2*">
+                            <Label Text="{Binding Id}"/>
+                            <Label Grid.Column="1" Text="{Binding Name}"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </Grid>
+        
+    
+
+</ContentPage>
